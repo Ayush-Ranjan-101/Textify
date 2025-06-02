@@ -27,13 +27,13 @@ const App = () => {
 
 
   // Renders everytime theme changes
-  useEffect(() => {
-    document.body.setAttribute("data-theme", theme);
+  // useEffect(() => {
+  //   document.body.setAttribute("data-theme", theme);
   
-    return () => {
-      document.body.removeAttribute("data-theme"); // Cleanup when component unmounts
-    };
-  }, [theme]);
+  //   return () => {
+  //     document.body.removeAttribute("data-theme"); // Cleanup when component unmounts
+  //   };
+  // }, [theme]);
 
   if (isCheckingAuth && !authUser) return (
     <div className='flex items-center justify-center h-screen'>
@@ -42,7 +42,7 @@ const App = () => {
   )
 
   return (
-    <div>
+    <div data-theme={theme}>
       <Navbar/>
 
       <Routes>
